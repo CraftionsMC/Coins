@@ -1,0 +1,4 @@
+name: Coinsystem
+version: ${project.version}
+main: net.craftions.coinsystem.env.spigot.Coinsystem
+api-version: 1.16
