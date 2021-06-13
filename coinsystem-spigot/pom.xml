@@ -10,6 +10,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub CraftionsMC Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/CraftionsMC/Coins</url>
+        </repository>
+    </distributionManagement>
+
     <artifactId>coinsystem-spigot</artifactId>
     <packaging>jar</packaging>
 
