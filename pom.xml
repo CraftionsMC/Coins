@@ -58,5 +58,6 @@
         <module>coinsystem-common</module>
         <module>coinsystem-spigot</module>
         <module>coinsystem-waterfall</module>
+        <module>coinsystem-standalone</module>
     </modules>
 </project>
