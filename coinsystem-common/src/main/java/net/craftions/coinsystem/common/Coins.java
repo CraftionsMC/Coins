@@ -27,27 +27,27 @@ public class Coins {
 
     public void addCoins(String playerUUID, int coins){
         int current = getCoins(playerUUID);
-        MySQL con = new MySQL(
-                "UPDATE `coins` WHERE `uuid` = '" + playerUUID + "' SET coins=" + (current + coins),
-                this.host, this.port, this.username, this.password, this.database, this.connectionParameters
-        );
-        con.executeUpdate();
-        con.close();
+        setCoins(playerUUID, (current + coins));
     }
 
     public void removeCoins(String playerUUID, int coins){
         int current = getCoins(playerUUID);
+        setCoins(playerUUID, (current - coins));
+    }
+
+    public void setCoins(String playerUUID, int coins){
+        delete(playerUUID);
         MySQL con = new MySQL(
-                "UPDATE `coins` WHERE `uuid` = '" + playerUUID + "' SET coins=" + (current - coins),
+                "INSERT INTO `coins` (uuid, coins) values (\"" + playerUUID + "\", " + coins + ")",
                 this.host, this.port, this.username, this.password, this.database, this.connectionParameters
         );
         con.executeUpdate();
         con.close();
     }
 
-    public void setCoins(String playerUUID, int coins){
+    public void delete(String playerUUID){
         MySQL con = new MySQL(
-                "INSERT INTO `coins` (uuid, coins) values (\"" + playerUUID + "\", " + coins + ")",
+                "DELETE FROM `coins` WHERE `uuid` = '" + playerUUID + "'",
                 this.host, this.port, this.username, this.password, this.database, this.connectionParameters
         );
         con.executeUpdate();
