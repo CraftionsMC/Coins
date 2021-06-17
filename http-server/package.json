@@ -10,5 +10,8 @@
   "license": "GNU-3.0-only",
   "dependencies": {
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }
